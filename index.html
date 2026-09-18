@@ -365,7 +365,253 @@
       color: var(--muted);
       font-size: .9rem;
     }
+    /* INTERACTIVE PROJECTS */
 
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      padding: 8px 14px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: .78rem;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: rgba(93,169,255,.08);
+    }
+
+    .project {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-project {
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(93,169,255,.09),
+          transparent 38%
+        ),
+        var(--card);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(93,169,255,.08);
+      border: 1px solid rgba(93,169,255,.18);
+      color: var(--blue);
+      font-size: .72rem;
+      font-weight: 800;
+      margin-bottom: 45px;
+    }
+
+    .featured-label {
+      font-size: .67rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 9px;
+    }
+
+    .project-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .project-skills span {
+      color: var(--muted);
+      font-size: .7rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 8px;
+    }
+
+    .view-project {
+      margin-top: 20px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .project:hover .view-project {
+      color: var(--blue-bright);
+    }
+
+    /* MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      padding: 30px 18px;
+      background: rgba(0,0,0,.78);
+      backdrop-filter: blur(8px);
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(100%, 700px);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 34px;
+      background: #15191f;
+      border: 1px solid #303741;
+      border-radius: 18px;
+      box-shadow: 0 30px 100px rgba(0,0,0,.5);
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: white;
+      border-color: #465367;
+    }
+
+    .modal-category {
+      display: inline-block;
+      color: var(--blue);
+      background: rgba(93,169,255,.08);
+      border: 1px solid rgba(93,169,255,.25);
+      border-radius: 30px;
+      padding: 5px 11px;
+      font-size: .72rem;
+      margin-bottom: 18px;
+    }
+
+    .modal-content h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -.025em;
+      margin-bottom: 8px;
+      padding-right: 45px;
+    }
+
+    .modal-summary {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .case-study {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-item {
+      padding-left: 18px;
+      border-left: 2px solid rgba(93,169,255,.55);
+    }
+
+    .case-item h4 {
+      color: var(--blue);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+    }
+
+    .case-item p {
+      color: #d7dce4;
+      font-size: .9rem;
+    }
+
+    .modal-tools {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tools-heading {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .modal-tags span {
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 580px) {
+      .modal {
+        padding: 15px;
+        align-items: flex-start;
+      }
+
+      .modal-content {
+        margin-top: 15px;
+        padding: 26px 22px;
+      }
+
+      .project-icon {
+        margin-bottom: 35px;
+      }
+    }
     /* SKILLS */
     .skill-groups {
       display: grid;
@@ -755,6 +1001,314 @@
     <h2 class="section-title">A closer look at how I work.</h2>
 
     <p class="section-intro">
+      Explore selected workflows and case studies across customer support,
+      quality assurance, AI data, virtual assistance, outreach, research,
+      recruitment and content support.
+    </p>
+
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="support">Customer Support</button>
+      <button class="filter-btn" data-filter="quality">QA & Data</button>
+      <button class="filter-btn" data-filter="va">Virtual Assistance</button>
+      <button class="filter-btn" data-filter="outbound">Outbound</button>
+      <button class="filter-btn" data-filter="other">Other</button>
+    </div>
+
+    <div class="projects">
+
+      <article class="project featured-project"
+        data-category="support"
+        onclick="openProject('customer-support')">
+
+        <div class="project-top">
+          <div class="project-icon">CS</div>
+          <span class="featured-label">Core Experience</span>
+        </div>
+
+        <div>
+          <div class="project-tag">Customer Support</div>
+          <h3>Customer Support Workflow</h3>
+          <p>
+            End-to-end support flow covering intake, troubleshooting,
+            resolution and follow-up documentation.
+          </p>
+
+          <div class="project-skills">
+            <span>Troubleshooting</span>
+            <span>Documentation</span>
+            <span>Escalations</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project featured-project"
+        data-category="quality"
+        onclick="openProject('qa-review')">
+
+        <div class="project-top">
+          <div class="project-icon">QA</div>
+          <span class="featured-label">Current Focus</span>
+        </div>
+
+        <div>
+          <div class="project-tag">QA & Data Quality</div>
+          <h3>QA / Data Quality Review</h3>
+          <p>
+            Quality review process for annotated data — checking guideline
+            adherence and surfacing rework.
+          </p>
+
+          <div class="project-skills">
+            <span>Quality Review</span>
+            <span>Rework</span>
+            <span>Guidelines</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project featured-project"
+        data-category="quality"
+        onclick="openProject('human-verification')">
+
+        <div class="project-top">
+          <div class="project-icon">AI</div>
+          <span class="featured-label">Current Focus</span>
+        </div>
+
+        <div>
+          <div class="project-tag">AI / Data Annotation</div>
+          <h3>Human Verification & Data Annotation</h3>
+          <p>
+            Human verification of AI-generated video through structured
+            classification and quality checks.
+          </p>
+
+          <div class="project-skills">
+            <span>Verification</span>
+            <span>Classification</span>
+            <span>AI Data</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="va"
+        onclick="openProject('client-tracker')">
+
+        <div class="project-icon">VA</div>
+
+        <div>
+          <div class="project-tag">Virtual Assistance</div>
+          <h3>Client Task Tracker</h3>
+          <p>
+            Lightweight task and follow-up tracker for organized
+            day-to-day administrative support.
+          </p>
+
+          <div class="project-skills">
+            <span>Google Sheets</span>
+            <span>Task Tracking</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="outbound"
+        onclick="openProject('lead-tracker')">
+
+        <div class="project-icon">LD</div>
+
+        <div>
+          <div class="project-tag">Outbound Support</div>
+          <h3>Lead / Prospect Tracker</h3>
+          <p>
+            Tracker for outbound outreach — logging calls,
+            responses and lead qualification.
+          </p>
+
+          <div class="project-skills">
+            <span>Dialtower</span>
+            <span>Google Sheets</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="outbound"
+        onclick="openProject('outbound-calling')">
+
+        <div class="project-icon">OB</div>
+
+        <div>
+          <div class="project-tag">Outbound Support</div>
+          <h3>Outbound Calling Workflow</h3>
+          <p>
+            Structured outbound calling process using scripts,
+            objection handling and response documentation.
+          </p>
+
+          <div class="project-skills">
+            <span>Cold Calling</span>
+            <span>Scripts</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="other"
+        onclick="openProject('recruitment')">
+
+        <div class="project-icon">HR</div>
+
+        <div>
+          <div class="project-tag">Recruitment</div>
+          <h3>Recruitment Support Workflow</h3>
+          <p>
+            Supporting recruitment through initial screening,
+            applicant records and candidate follow-ups.
+          </p>
+
+          <div class="project-skills">
+            <span>Screening</span>
+            <span>Follow-ups</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="other"
+        onclick="openProject('research')">
+
+        <div class="project-icon">RS</div>
+
+        <div>
+          <div class="project-tag">Research</div>
+          <h3>Research & Comparison Report</h3>
+          <p>
+            Structured research and comparison report designed
+            to turn scattered information into usable findings.
+          </p>
+
+          <div class="project-skills">
+            <span>Research</span>
+            <span>Google Sheets</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+
+      <article class="project"
+        data-category="va"
+        onclick="openProject('canva')">
+
+        <div class="project-icon">CV</div>
+
+        <div>
+          <div class="project-tag">Virtual Assistance</div>
+          <h3>Canva / Basic Content Samples</h3>
+          <p>
+            Clean visual content and simple layouts created
+            in Canva for practical business needs.
+          </p>
+
+          <div class="project-skills">
+            <span>Canva</span>
+            <span>Basic Design</span>
+          </div>
+
+          <button class="view-project">View Case Study →</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECT MODAL -->
+
+<div id="projectModal" class="modal" onclick="outsideClose(event)">
+
+  <div class="modal-content">
+
+    <button class="modal-close"
+      onclick="closeProject()"
+      aria-label="Close project">
+      ×
+    </button>
+
+    <div id="modalCategory" class="modal-category"></div>
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalSummary" class="modal-summary"></p>
+
+    <div class="case-study">
+
+      <div class="case-item">
+        <h4>Challenge</h4>
+        <p id="modalChallenge"></p>
+      </div>
+
+      <div class="case-item">
+        <h4>My Role</h4>
+        <p id="modalRole"></p>
+      </div>
+
+      <div class="case-item">
+        <h4>Approach</h4>
+        <p id="modalApproach"></p>
+      </div>
+
+      <div class="case-item">
+        <h4>Tools</h4>
+        <p id="modalTools"></p>
+      </div>
+
+      <div class="case-item">
+        <h4>Outcome</h4>
+        <p id="modalOutcome"></p>
+      </div>
+
+    </div>
+
+    <div class="modal-tools">
+      <span class="tools-heading">Tools & Skills Used</span>
+      <div id="modalTags" class="modal-tags"></div>
+    </div>
+
+  </div>
+</div>
+  <div class="container">
+
+    <div class="section-label">Selected Work</div>
+    <h2 class="section-title">A closer look at how I work.</h2>
+
+    <p class="section-intro">
       Selected examples demonstrating organization, quality review,
       customer support, research and structured remote work.
     </p>
@@ -915,6 +1469,196 @@
     <div>Remote Support Professional • Metro Manila, Philippines</div>
   </div>
 </footer>
+<script>
 
+const projectData = {
+
+  "customer-support": {
+    category: "Customer Support",
+    title: "Customer Support Workflow",
+    summary: "End-to-end support flow covering intake, troubleshooting, resolution, and follow-up documentation.",
+    challenge: "Handling a steady volume of customer issues while keeping response times and quality consistent.",
+    role: "Frontline support handling inquiries, troubleshooting, account concerns, and escalations.",
+    approach: "Follow structured troubleshooting steps, listen carefully, document each interaction, resolve what can be handled directly, and escalate complex cases with complete context.",
+    tools: "Customer support systems, email, phone support, internal knowledge resources, and documentation tools.",
+    outcome: "Consistent, well-documented resolutions and clearer handoffs when escalation is required.",
+    tags: ["Customer Support", "Troubleshooting", "Documentation", "Escalations"]
+  },
+
+  "qa-review": {
+    category: "QA & Data Quality",
+    title: "QA / Data Quality Review",
+    summary: "Quality review process for annotated data — checking guideline adherence and surfacing rework.",
+    challenge: "Keeping annotation output aligned with detailed guidelines while identifying subtle errors and ambiguous cases.",
+    role: "Domain Expert reviewing annotator output against established criteria and quality expectations.",
+    approach: "Review cases against guidelines, document findings, identify rework needs, evaluate disputes, and escalate cases where available guidance is insufficient.",
+    tools: "Annotation workflow, Google Sheets, guideline documentation, and structured QA review processes.",
+    outcome: "Clearer feedback, properly identified rework, and consistent application of project guidelines.",
+    tags: ["Quality Review", "Data Validation", "Rework", "Guideline Adherence"]
+  },
+
+  "human-verification": {
+    category: "AI / Data Annotation",
+    title: "Human Verification & Data Annotation",
+    summary: "Human verification of AI-generated video through classification and quality checks.",
+    challenge: "Reviewing AI-generated content for accuracy and guideline adherence across repetitive, high-volume tasks.",
+    role: "Human Verifier reviewing video segments and selecting the most accurate classification based on project criteria.",
+    approach: "Apply structured classification criteria, verify each segment carefully, maintain consistency, and flag unclear or ambiguous cases for the appropriate quality process.",
+    tools: "Atlas Capture platform and project guideline documentation.",
+    outcome: "Reliable verified output with unclear cases identified rather than forced into unsupported classifications.",
+    tags: ["Atlas Capture", "Human Verification", "Data Annotation", "Classification"]
+  },
+
+  "client-tracker": {
+    category: "Virtual Assistance",
+    title: "Client Task Tracker",
+    summary: "Lightweight task and follow-up tracker for organized day-to-day administrative support.",
+    challenge: "Keeping multiple tasks, deadlines and follow-ups organized so important actions do not slip through the cracks.",
+    role: "Virtual support professional organizing and maintaining task information.",
+    approach: "Maintain a structured tracker, organize priorities, update statuses, record next actions, and keep follow-up information current.",
+    tools: "Google Sheets and Google Workspace.",
+    outcome: "Clear task visibility, organized information and easier follow-up management.",
+    tags: ["Google Sheets", "Google Workspace", "Task Tracking", "Admin Support"]
+  },
+
+  "lead-tracker": {
+    category: "Outbound Support",
+    title: "Lead / Prospect Tracker",
+    summary: "Tracker for outbound outreach — logging calls, responses and lead qualification.",
+    challenge: "Keeping outbound activity organized while making previous interactions easy to review before follow-up.",
+    role: "Outbound caller documenting interactions, responses and call outcomes.",
+    approach: "Use structured tracking, document responses consistently, record call outcomes and maintain clear information for subsequent follow-ups.",
+    tools: "Dialtower, AO Portal and tracking tools.",
+    outcome: "Organized outreach records that make follow-ups and activity tracking straightforward.",
+    tags: ["Dialtower", "AO Portal", "Outbound Calling", "Documentation"]
+  },
+
+  "outbound-calling": {
+    category: "Outbound Support",
+    title: "Outbound Calling Workflow",
+    summary: "Structured outbound calling process using scripts and response documentation.",
+    challenge: "Handling high-volume outbound calls while maintaining script adherence, professionalism and consistent documentation.",
+    role: "Outbound caller contacting prospects, asking structured questions, handling objections and documenting responses.",
+    approach: "Follow the approved script, listen actively, respond professionally to objections, gather required information and document each call outcome accurately.",
+    tools: "Dialtower, AO Portal, project scripts and call tracking.",
+    outcome: "Consistent outreach with complete call documentation and clearly recorded outcomes.",
+    tags: ["Cold Calling", "Dialtower", "Scripts", "Objection Handling"]
+  },
+
+  "recruitment": {
+    category: "Recruitment",
+    title: "Recruitment Support Workflow",
+    summary: "Supporting recruitment through initial screening, requirements checking, applicant records and follow-ups.",
+    challenge: "Keeping applicant information, requirements and follow-up activity organized throughout the early recruitment process.",
+    role: "Recruitment support assisting with initial interviews, applicant information, requirements checking and candidate communication.",
+    approach: "Review applicant information, conduct initial screening activities, check requirements, maintain accurate records and follow up with candidates as needed.",
+    tools: "Spreadsheets, email, phone communication and applicant records.",
+    outcome: "Organized applicant information and timely candidate follow-ups throughout the support process.",
+    tags: ["Recruitment Support", "Screening", "Data Entry", "Candidate Follow-up"]
+  },
+
+  "research": {
+    category: "Research",
+    title: "Research & Comparison Report",
+    summary: "Structured research and comparison designed to turn scattered information into clear findings.",
+    challenge: "Organizing information from multiple sources into something that is easy to review and use.",
+    role: "Research support gathering, organizing and summarizing relevant information.",
+    approach: "Collect relevant information, organize findings into consistent categories, compare key differences and summarize the results clearly.",
+    tools: "Google Docs, Google Sheets and online research.",
+    outcome: "A structured comparison that makes important differences easier to identify.",
+    tags: ["Online Research", "Google Docs", "Google Sheets", "Reporting"]
+  },
+
+  "canva": {
+    category: "Virtual Assistance",
+    title: "Canva / Basic Content Samples",
+    summary: "Basic visual content and layouts created with Canva for practical business and social-media needs.",
+    challenge: "Creating clean, readable visual materials while keeping information and branding organized.",
+    role: "Creating basic graphics and layouts using Canva.",
+    approach: "Work from the content requirement, use appropriate layouts, maintain visual consistency and refine designs based on the intended use.",
+    tools: "Canva.",
+    outcome: "Clean, ready-to-use visual materials for everyday content needs.",
+    tags: ["Canva", "Basic Design", "Content Support"]
+  }
+
+};
+
+
+function openProject(id) {
+
+  const p = projectData[id];
+
+  if (!p) return;
+
+  document.getElementById("modalCategory").textContent = p.category;
+  document.getElementById("modalTitle").textContent = p.title;
+  document.getElementById("modalSummary").textContent = p.summary;
+  document.getElementById("modalChallenge").textContent = p.challenge;
+  document.getElementById("modalRole").textContent = p.role;
+  document.getElementById("modalApproach").textContent = p.approach;
+  document.getElementById("modalTools").textContent = p.tools;
+  document.getElementById("modalOutcome").textContent = p.outcome;
+
+  const tags = document.getElementById("modalTags");
+  tags.innerHTML = "";
+
+  p.tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.textContent = tag;
+    tags.appendChild(span);
+  });
+
+  document.getElementById("projectModal").classList.add("show");
+  document.body.classList.add("modal-open");
+}
+
+
+function closeProject() {
+  document.getElementById("projectModal").classList.remove("show");
+  document.body.classList.remove("modal-open");
+}
+
+
+function outsideClose(event) {
+  if (event.target.id === "projectModal") {
+    closeProject();
+  }
+}
+
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeProject();
+  }
+});
+
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project[data-category]");
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", function() {
+
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    this.classList.add("active");
+
+    const filter = this.dataset.filter;
+
+    projectCards.forEach(card => {
+
+      if (filter === "all" || card.dataset.category === filter) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  });
+
+});
+
+</script>
 </body>
 </html>
