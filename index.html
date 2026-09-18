@@ -1674,35 +1674,7 @@ function openProject(id) {
   document.getElementById("modalApproach").textContent = p.approach;
   document.getElementById("modalTools").textContent = p.tools;
   document.getElementById("modalOutcome").textContent = p.outcome;
-// Portfolio sample / demonstration content
-const sampleScenario = document.getElementById("modalSampleScenario");
-const sampleResponse = document.getElementById("modalSampleResponse");
-const sampleProcess = document.getElementById("modalSampleProcess");
-const sampleNote = document.getElementById("modalSampleNote");
 
-if (sampleScenario) {
-    sampleScenario.textContent = data.sampleScenario || "Sample coming soon.";
-}
-
-if (sampleResponse) {
-    sampleResponse.textContent = data.sampleResponse || "Sample coming soon.";
-}
-
-if (sampleProcess) {
-    sampleProcess.innerHTML = "";
-
-    if (data.sampleProcess && Array.isArray(data.sampleProcess)) {
-        data.sampleProcess.forEach(step => {
-            const li = document.createElement("li");
-            li.textContent = step;
-            sampleProcess.appendChild(li);
-        });
-    }
-}
-
-if (sampleNote) {
-    sampleNote.textContent = data.sampleNote || "Sample coming soon.";
-}
   const tags = document.getElementById("modalTags");
   tags.innerHTML = "";
 
